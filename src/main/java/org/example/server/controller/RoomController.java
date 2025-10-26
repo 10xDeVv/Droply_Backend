@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 public class RoomController {
 
     private final RoomService roomService;
-    private final QRCodeService codeService;
 
     @PostMapping("/create")
     public ResponseEntity<CreateRoomResponse> createRoom(){

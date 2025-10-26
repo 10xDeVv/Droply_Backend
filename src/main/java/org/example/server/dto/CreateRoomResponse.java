@@ -2,7 +2,6 @@ package org.example.server.dto;
 
 import lombok.*;
 
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
