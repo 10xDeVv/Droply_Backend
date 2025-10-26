@@ -104,6 +104,8 @@ public class RoomService {
 
         notifyRoomJoined(room.getId());
 
+        notifyPeerJoined(room.getId());
+
         log.info("Sender joined room: {}", room.getId());
 
 
@@ -190,5 +192,16 @@ public class RoomService {
                 .build();
 
         messagingTemplate.convertAndSend("/topic/room/" + roomId, message);
+    }
+
+    private void notifyPeerJoined(String roomId){
+        WebSocketMessage message = WebSocketMessage.builder()
+                .type(MessageType.PEER_JOINED)
+                .roomId(roomId)
+                .payload(null)
+                .build();
+
+        messagingTemplate.convertAndSend("/topic/room/" + roomId, message);
+        log.info("Sent PEER_JOINED notification for room: {}", roomId);
     }
 }
