@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: droply-backend
+
+server:
+  port: 8080
+
+supabase:
+  url: ${SUPABASE_URL}
+  anon-key: ${SUPABASE_ANON_KEY}
+  service-key: ${SUPABASE_SERVICE_KEY}
+  bucket-name: ${SUPABASE_BUCKET_NAME}
+
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS}
+
+app:
+  room:
+    expiry-minutes: 10
